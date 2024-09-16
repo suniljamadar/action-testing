@@ -35,8 +35,8 @@ jobs:
 
   my_job3:
     if: always()
+    needs: [my_job1, my_job2]
     runs-on: ubuntu-latest
     steps:  
       - name: print secret value
         run: echo ${{ secrets.TFE_URL }}${{ github.event.commits[0].author.name }}
-        needs: [my_job1, my_job2]
