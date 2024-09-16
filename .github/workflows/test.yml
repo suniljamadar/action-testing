@@ -17,13 +17,17 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
+      - name: print env secret value
+        run: echo ${{ env.PWD }}"
+        
       - name: testing echo command
         if: ${{ env.PWD }} != 'suniljamadar'
         run: echo testfile
+      
       - name: command
         if: ${{ github.event.commits[0].author.name == 'suniljamadar' }}
         run: echo filing tax
-
+      
       - name: print env value
         run: echo ${{ env.CHANNEL}}
 
