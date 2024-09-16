@@ -22,3 +22,6 @@ jobs:
       - name: command
         if: github.event.commits[0].author.name == 'suniljamadar'
         run: echo filing tax
+
+      - name: print env value
+        run: echo ${{ env.CHANNEL}}
