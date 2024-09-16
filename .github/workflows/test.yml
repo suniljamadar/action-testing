@@ -9,6 +9,7 @@ on:
 
 env:
   CHANNEL: "IAC_NOTIFICATION_CHANNEL"
+  PWD: ${{ secrets.TFE_URL }}
 
 jobs:
   my_job:
@@ -17,7 +18,7 @@ jobs:
 
     steps:
       - name: testing echo command
-        if: ${{ secrets.TFE_URL }} != 'suniljamadar'
+        if: ${{ env.PWD }} != 'suniljamadar'
         run: echo testfile
       - name: command
         if: ${{ github.event.commits[0].author.name == 'suniljamadar' }}
