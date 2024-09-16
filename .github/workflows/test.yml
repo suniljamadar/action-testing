@@ -5,6 +5,9 @@ on:
   release:
     types: [edited, published]
 
+env:
+  CHANNEL: "IAC_NOTIFICATION_CHANNEL"
+
 jobs:
   my_job:
     if : always()
@@ -14,3 +17,6 @@ jobs:
       - name: testing echo command
         run: echo testfile
         if: "${{ github.actor == 'suniljamadar'}}"
+  
+      - name: print env value
+        run: echo "${{ env.CHANNEL}}"
