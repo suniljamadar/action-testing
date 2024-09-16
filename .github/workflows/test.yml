@@ -2,11 +2,12 @@ on:
   push:
     branches:
     - main
+
 jobs:
-  build:
-    name: test
-    runs_on: ubuntu-latest
-    
+  my_job:
+    name: deploy to staging
+    runs-on: ubuntu-22.04
+
     steps:
       - name: testing echo command
         run: echo testfile
