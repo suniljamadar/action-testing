@@ -16,4 +16,4 @@ jobs:
     steps:
       - name: testing echo command
         run: echo testfile
-        if: ${{ github.actor == 'suniljamadar'}}
+        if: ${{ github.actor == suniljamadar}}
