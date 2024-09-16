@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: print env secret value
-        run: echo ${{ env.PWD }}"
+        run: echo ${{ env.PWD }}
         
       - name: testing echo command
         if: ${{ env.PWD }} != 'suniljamadar'
