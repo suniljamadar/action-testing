@@ -7,8 +7,8 @@ on:
     types: [edited,published]
 
 jobs:
-  test:
+  build:
     runs_on: ubuntu-latest
     steps:
-      name: testing echo command
-      run: echo testfile
+      - name: testing echo command
+        run: echo testfile
