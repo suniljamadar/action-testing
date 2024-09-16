@@ -1,13 +1,13 @@
 name: dbaas-tag
 on:
-  workflow_call:
-  # push:
-  # #   branches:
-  # # #     - main
-  #   tags:
-  #     - '[0-9]+.[0-9]+.[0-9]'
-  # release:
-  #   types: [edited, published]
+  # workflow_call:
+  push:
+  #   branches:
+  # #     - main
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]'
+  release:
+    types: [edited, published]
 
 env:
   CHANNEL: "IAC_NOTIFICATION_CHANNEL"
