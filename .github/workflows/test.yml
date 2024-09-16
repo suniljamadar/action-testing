@@ -21,7 +21,7 @@ jobs:
         run: echo ${{ env.PWD }}
         
       - name: testing echo command
-        if: ${{ env.PWD }} != 'suniljamadar'
+        if: ${{ env.PWD }} != suniljamadar
         run: echo testfile
       
       - name: command
