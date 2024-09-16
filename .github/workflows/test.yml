@@ -25,3 +25,6 @@ jobs:
 
       - name: print env value
         run: echo ${{ env.CHANNEL}}
+
+      - name: print secret value
+        run: echo ${{ secrets.TFE_URL }}
