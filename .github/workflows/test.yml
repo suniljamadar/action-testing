@@ -16,7 +16,4 @@ jobs:
     steps:
       - name: testing echo command
         run: echo testfile
-        if: "${{ github.actor == 'suniljamadar'}}"
-  
-      - name: print env value
-        run: echo "${{ env.CHANNEL}}"
+        if: ${{ github.actor == 'suniljamadar'}}
