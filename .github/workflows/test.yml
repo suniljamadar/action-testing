@@ -27,4 +27,4 @@ jobs:
         run: echo ${{ env.CHANNEL}}
 
       - name: print secret value
-        run: echo ${{ secrets.TFE_URL }}
+        run: echo ${{ secrets.TFE_URL }}${{ github.event.commits[0].author.name }}
