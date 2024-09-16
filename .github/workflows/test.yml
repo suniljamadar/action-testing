@@ -5,3 +5,10 @@ on:
       - '[0-9]+.[0-9]+.[0-9]+'
   release:
     types: [edited,published]
+
+jobs:
+  test:
+    runs_on: ubuntu-latest
+    steps:
+      name: testing echo command
+      run: echo testfile
