@@ -34,7 +34,7 @@ jobs:
         run: ech ${{ env.CHANNEL}}
 
   my_job3:
-    # if: always()
+    if: always()
     needs: [my_job1, my_job2]
     runs-on: ubuntu-latest
     steps:  
