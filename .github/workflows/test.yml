@@ -17,10 +17,10 @@ jobs:
 
     steps:
       - name: testing echo command
-        if: github.event.commits[0].author.name != 'suniljamadar'
+        if: ${{ github.event.commits[0].author.name != 'suniljamadar' }}
         run: echo testfile
       - name: command
-        if: github.event.commits[0].author.name == 'suniljamadar'
+        if: ${{ github.event.commits[0].author.name == 'suniljamadar' }}
         run: echo filing tax
 
       - name: print env value
