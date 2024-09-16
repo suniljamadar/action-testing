@@ -21,7 +21,8 @@ jobs:
         run: echo ${{ env.PWD }}
         
       - name: testing echo command
-        if: ${{ env.PWD }} == suniljamadar
+        if: ${{ github.event.commits[0].author.name == 'suniljamadar' }}
+        # if: ${{ env.PWD }} == suniljamadar
         run: echo testfile
       
       - name: command
