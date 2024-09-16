@@ -1,11 +1,11 @@
 on:
   push:
-    branches:
-      - main
-  #   tags:
-  #     - '[0-9]+.[0-9]+.[0-9]+'
-  # release:
-  #   types: [edited, published]
+  #   branches:
+  # #     - main
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+  release:
+    types: [edited, published]
 
 env:
   CHANNEL: "IAC_NOTIFICATION_CHANNEL"
@@ -31,7 +31,7 @@ jobs:
         if: ${{ github.event.commits[0].author.name == 'suniljamadar' }}
         run: echo filing tax      
       - name: print env value
-        run: ech ${{ env.CHANNEL}}
+        run: echo ${{ env.CHANNEL}}
 
   my_job3:
     if: always()
