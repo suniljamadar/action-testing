@@ -15,23 +15,22 @@ jobs:
   my_job1:
     if : always()
     runs-on: ubuntu-22.04
-
     steps:
       - name: print env secret value
         run: echo ${{ env.PWD }}
-         
       - name: testing echo command
         if: ${{ github.event.commits[0].author.name == 'suniljamadar' }}
         # if: ${{ env.PWD }} == suniljamadar
         run: echo testfile
   
   my_job2:
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
       - name: command
         if: ${{ github.event.commits[0].author.name == 'suniljamadar' }}
-        run: echo filing tax
-      
+        run: echo filing tax      
       - name: print env value
         run: echo ${{ env.CHANNEL}}
-
       - name: print secret value
         run: echo ${{ secrets.TFE_URL }}${{ github.event.commits[0].author.name }}
